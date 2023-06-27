@@ -1,0 +1,312 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: 100%;
+    height: 200px;
+    display: flex;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+list-style: none;
+margin-top: 45px;
+margin-left: 200px;
+}
+.novosty_pic{
+    margin-top: 30px;
+}
+
+.block_one{
+    margin-left: 500px;
+    display: flex;
+    margin-top: 50px;
+    position: absolute;
+}
+.novosty{
+    color: black;
+    text-decoration: none;
+    margin-right: 50px;
+    margin-left: 50px;
+    
+}
+
+
+.logo{
+    margin-left: 80px;
+   
+}
+
+footer {
+    width: 100%;
+    height: 300px;
+    background-color: #69beff;
+    position: absolute;
+    margin-top:200px ;
+    display: flex;
+}
+.footer_block {
+    color: white;
+    margin-left: 50px;
+    font-size: 20px;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+.footer_items{
+    margin-left: 360px;
+   display: flex;
+   margin-top: 100px;
+}
+.footer__items{
+    margin-left: 52px;
+    margin-top: 30px;
+    position: absolute;
+    display: flex;
+}
+.fb{
+    text-decoration: none;
+    color: white;
+
+}
+.fcontacts{
+    position: absolute;
+    margin-left: 1200px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    margin-top: 50px;
+    display: flex;
+}
+.footer_store{
+    width: 50px;
+    margin-left: 400px;
+}
+
+.zagolovok{
+    margin-left: 720px;
+}
+.osnov{
+    max-width: 800px;
+    margin-left: 400px;
+    font-size: 20px;
+    line-height: 40px;
+}
+@media screen and (min-width:768px) and (max-width:1023px){
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    header{
+
+        height: 200px;
+        display: flex;
+    }
+    
+    nav ul{
+        display: flex;
+        justify-content: space-between;
+       
+    list-style: none;
+    margin-top: 45px;
+    margin-left: 10px;
+    }
+    .novosty_pic{
+        margin-top: 30px;
+        margin-right: 100px;
+    }
+    
+    .block_one{
+        margin-left: 500px;
+        display: flex;
+        margin-top: 50px;
+        position: absolute;
+    }
+    .novosty{
+        color: black;
+        text-decoration: none;
+        margin-right: 50px;
+        margin-left: 30px;
+        
+    }
+    
+    
+    .logo{
+        margin-left: 0px;
+       
+    }
+    
+    footer {
+        width: 100%;
+        height: 300px;
+        background-color: #69beff;
+        position: absolute;
+        margin-top:200px ;
+        display: flex;
+    }
+    .footer_block {
+        color: white;
+        margin-left: 50px;
+        font-size: 20px;
+        margin-top: 50px;
+        text-decoration: none;
+    }
+    
+    .footer_items{
+        margin-left: 160px;
+       display: flex;
+       margin-top: 100px;
+    }
+    .footer__items{
+        margin-left: 52px;
+        margin-top: 30px;
+        position: absolute;
+        display: flex;
+    }
+    .fb{
+        text-decoration: none;
+        color: white;
+    
+    }
+    .fcontacts{
+        position: absolute;
+        margin-left: 700px;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        margin-top: 50px;
+        display: flex;
+    }
+    .footer_store{
+        width: 50px;
+        margin-left: 200px;
+    }
+    
+    
+    .zagolovok{
+        margin-left: 400px;
+    }
+    .osnov{
+        max-width: 800px;
+        margin-left: 140px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .golub{
+        background-color: #E7F8FF;
+       border-radius:30px;
+       background-size: inherit;
+       padding-left: 20px;
+    }
+}
+@media screen and (max-width:480px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    header{
+        width: 100%;
+        height: 200px;
+        display: flex;
+    }
+    
+    nav ul{
+        display: flex;
+        justify-content: space-between;
+        padding: 0px;
+    list-style: none;
+    margin-top: 65px;
+    margin-left: 00px;
+    line-height: 1.8;
+
+    }
+    .novosty_pic{
+        margin-top: 30px;
+    }
+    
+    .block_one{
+        margin-left: 500px;
+        display: flex;
+        margin-top: 50px;
+        position: absolute;
+    }
+    .novosty{
+        color: black;
+        text-decoration: none;
+        margin-right: 50px;
+        margin-left: 50px;
+        
+    }
+    
+    
+    .logo{
+        margin-left: 10px;
+       
+    }
+    
+    footer {
+        width: 100%;
+        height: 300px;
+        background-color: #69beff;
+        position: absolute;
+        margin-top:200px ;
+        display: flex;
+    }
+    .footer_block {
+        color: white;
+        margin-left: 50px;
+        font-size: 20px;
+        margin-top: 50px;
+        text-decoration: none;
+    }
+    
+    .footer_items{
+        margin-left: 10px;
+       display: flex;
+       margin-top: 100px;
+    }
+    .footer__items{
+        margin-left: 52px;
+        margin-top: 30px;
+        position: absolute;
+        display: flex;
+    }
+    .fb{
+        text-decoration: none;
+        color: white;
+    
+    }
+    .fcontacts{
+        position: absolute;
+        margin-left: 200px;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        margin-top: 50px;
+        display: flex;
+    }
+    .footer_store{
+        width: 50px;
+        margin-left: 400px;
+    }
+    
+    
+    .zagolovok{
+        margin-left: 170px;
+    }
+    .osnov{
+        max-width: 800px;
+        margin-left: 80px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .golub{
+        background-color: #E7F8FF;
+       border-radius:30px;
+       background-size: inherit;
+       padding-left: 20px;
+    }
+}

@@ -1,0 +1,196 @@
+<?php
+// Проверка, была ли отправлена форма авторизации
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Получение введенных пользователем данных
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Подключение к базе данных
+    $servername = "localhost";
+    $usernameDB = "root";
+    $passwordDB = "root";
+    $dbname = "Shinfly";
+    $conn = new mysqli($servername, $usernameDB, $passwordDB, $dbname);
+
+    // Проверка соединения с базой данных
+    if ($conn->connect_error) {
+        die("Ошибка соединения: " . $conn->connect_error);
+    }
+
+    // Подготовка SQL-запроса для проверки логина и пароля
+    $stmt = $conn->prepare("SELECT client_id FROM clients WHERE mail = ? AND password = ?");
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Проверка результата запроса
+    if ($result->num_rows == 1) {
+        // Верные логин и пароль
+        // Перенаправление на страницу профиля
+        header("Location: profile.html");
+        exit();
+    } else {
+        // Неправильный логин или пароль
+        echo "Неправильно набраны пароль или почта.";
+    }
+
+    // Закрытие соединения с базой данных
+    $stmt->close();
+    $conn->close();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/mainsass7.css">
+    <title>SHINFLY</title>
+</head>
+<body>
+    <header>
+       <a href = "sitess5.html"><img class = "logo" src="images/2023-06-13_08-51-03.png" width = "220px" height = "100px" alt="" ></a>
+        <nav>
+            <ul>
+                <li><a class = "novosty" href="sitess4.html">Новости</a></li>
+                <li><a class = "novosty" href="sitess1.html">О компании</a></li>
+                <li><a class = "novosty" href="sitess.html">Правила и политика</a></li>
+                <li><a class = "novosty" href="sitess2.html">FAQ</a></li>
+                <li><a class = "novosty" href="sitess3.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <a href = "vhod.html"> <img class = "novosty_pic"  src="images/181-1814767_person-svg-png-icon-free-download-profile-icon.png" width = "50px" height = "50px" alt=""></a>
+   
+</div>
+
+</header>
+<main>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#loginLink").click(function( event ){
+           event.preventDefault();
+           $(".overlay").fadeToggle("fast");
+     });
+
+    $(".overlayLink").click(function(event){
+        event.preventDefault();
+        var action = $(this).attr('data-action');
+
+        $("#loginTarget").load("ajax/" + action);
+
+        $(".overlay").fadeToggle("fast");
+    });
+
+    $(".close").click(function(){
+        $(".overlay").fadeToggle("fast");
+    });
+
+    $(document).keyup(function(e) {
+        if(e.keyCode == 27 && $(".overlay").css("display") != "none" ) { 
+            event.preventDefault();
+            $(".overlay").fadeToggle("fast");
+        }
+    });
+});
+$(document).ready(function() {
+    $("#registerLink").click(function( event ){
+           event.preventDefault();
+           $(".overlay1").fadeToggle("fast");
+     });
+
+    $(".overlayLink1").click(function(event){
+        event.preventDefault();
+        var action = $(this).attr('data-action');
+
+        $("#registerTarget").load("ajax/" + action);
+
+        $(".overlay1").fadeToggle("fast");
+    });
+
+    $(".close").click(function(){
+        $(".overlay1").fadeToggle("fast");
+    });
+  
+    $(document).keyup(function(e) {
+        if(e.keyCode == 27 && $(".overlay1").css("display") != "none" ) { 
+            event.preventDefault();
+            $(".overlay1").fadeToggle("fast");
+        }
+    });
+});
+</script>
+    
+    <ul>
+        <div class = "area"><li><a href="login.php" class="overlayLink" data-action="login-form.html">Авторизация</a></li></div>
+        <li><a href="register.php" class="overlayLink1" data-action="registration-form.html">Регистрация</a></li>
+    </ul>
+    <div class="overlay" style="display: none;">
+        <div class="login-wrapper">
+            <div class="login-content" id="loginTarget">
+                <a class="close">x</a>
+                <h3>Авторизация</h3>
+                <form method="post" action="login.php">
+                    <label for="username">
+                        Email:
+                        <input type="text" name="username" id="username" placeholder=""  />
+                    </label>
+                    <label for="password">
+                        Пароль:
+                        <input type="password" name="password" id="password" placeholder=""  />
+                    </label>
+                    <button type="submit">Войти</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="overlay1" style="display: none;">
+        <div class="login-wrapper">
+            <div class="login-content" id="registerTarget">
+                <a class="close">x</a>
+                <h3>Регистрация</h3>
+                <form method="post" action="register.php">
+                    <label for="password">
+                        Имя:
+                        <input type="password" name="password" id="password" placeholder=""  />
+                    </label>
+                    <label for="password">
+                        Телефон:
+                        <input type="password" name="password" id="password" placeholder=""  />
+                    </label>
+                    <label for="username">
+                        Email:
+                        <input type="text" name="username" id="username" placeholder=""  />
+                    </label>
+                    <label for="password">
+                        Пароль:
+                        <input type="password" name="password" id="password" placeholder=""  />
+                    </label>
+                    <button type="submit">Войти</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class = "main_footer">
+    <div class = "footer_item">
+     <p class = "footer_block"><a class = "fb" href = "sitess.html">Правила и политика</a></p><br><br><br><div class = "footer__items">
+    <a href = "https://vk.com/thegreatdetective"><img src = "images/2023-06-14_15-10-45.png" width="50px" height="50px"></a> 
+    <a href = "https://vk.com/thegreatdetective"> <img src = "images/2023-06-14_15-11-05.png" width="50px" height="50px"></a>
+    <a href = "https://vk.com/thegreatdetective"> <img src = "images/2023-06-14_15-11-21.png" width="50px" height="50px"></a>
+    </div></div>
+<div class = "footer_items">
+    <img src = "images/app-store-logos-690.png" width="300px" height="130px">
+</div>
+<div class = "fcontacts">
+    <p>
+        Контактные данные:<br>
++7 495 783–0707 , +7 495 777–9999<br><br><br><br><br><br><br><br>
+© 2023. ShinFly
+
+    </p>
+</div>
+</footer>
+</body>
+</html>

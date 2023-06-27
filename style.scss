@@ -1,0 +1,180 @@
+$black:rgb(226, 74, 74);
+$const:green;
+@import "_mixins.scss";
+@include button;
+@include header;
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    max-width: 1100px;
+    max-width: 90%;
+    height: 100%;
+    width: 1200;
+    margin: 0 auto;
+    font-family: 'play';
+    &_main{
+        max-width: 1200px;
+    max-width: 90%;
+    height: 100%;
+    width: 1200;
+    margin: 0 auto;
+    font-family: 'play';
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    }
+}
+
+.main-menu{
+    padding: 10px 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    &_left{
+        justify-content: flex-start;
+        
+    }
+    &_right{
+        justify-content: flex-end;
+    }
+    &__link{
+        text-transform: capitalize;
+        font-size: 1em;
+        color:$black;
+        text-decoration: none;
+        margin-left: 30px;
+    }
+    img {
+        width: 30px;
+        height: 29px;
+    }
+}
+
+
+.block {
+    &_one{
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 700px;
+        margin-right: 300px;
+    }
+    &_two{
+        text-align: center;
+        width: 500px;
+        img{
+            width: 100px;
+            height: 100px;
+        }
+       p{
+        margin-bottom: 50px;
+       }
+    }
+}
+
+.picture {
+    display: flex;
+}
+.name {
+    text-align: center;
+    p {
+        width: 300px;
+        margin-left: auto;
+margin-right: auto;
+    }
+}
+.box-main {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    .zoros {
+        margin-top: 50px;
+        display: flex;
+    }
+    
+    .zoro {
+        text-align: center;
+        border-width:2px;
+        margin-right:270px;
+        margin-left:auto;
+        p {
+            width: 300px;
+            position: absolute;
+            box-sizing: border-box;
+            display: none;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            box-sizing: border-box;
+            opacity:1;
+        }
+    }
+    .zoro:hover{
+        p{
+            display: block;
+        }
+        img{
+            opacity: .25;
+        }
+    }
+    .zoro1 {
+        text-align: center;
+        border-width:2px;
+        margin-left: 270px;
+        margin-right:270px;
+        p {
+            width: 300px;
+            position: absolute;
+            box-sizing: border-box;
+            display: none;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            box-sizing: border-box;
+            opacity:1;
+        }
+    }
+    .zoro1:hover{
+        p{
+            display: block;
+        }
+        img{
+            opacity: .25;
+        }
+    }
+    .zoro2{
+        text-align: center;
+        border-width:2px;
+        margin-left:270px;
+        margin-right:270px;
+        p {
+            width: 300px;
+            position: absolute;
+            box-sizing: border-box;
+            display: none;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            box-sizing: border-box;
+            opacity:1;
+        }
+    }
+    .zoro2:hover{
+        p{
+            display: block;
+        }
+        img{
+            opacity: .25;
+        }
+    }
+}
